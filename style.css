@@ -1,0 +1,390 @@
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: #000;
+    overflow: hidden;
+  }
+  
+  /* Pantalla de Presentación */
+  #presentacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fdd835, #ffecb3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 999;
+    animation: fadeIn 2s ease;
+  }
+  
+  .contenedor-texto h1 {
+    font-size: 3rem;
+    color: #222;
+    margin-bottom: 30px;
+    animation: scaleUp 2s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contenedor-texto button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background: #ffcc00;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contenedor-texto button:hover {
+    background: #ffe066;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .presentacion-activa {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  .presentacion-inactiva {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes scaleUp {
+    from { transform: scale(0.8); }
+    to { transform: scale(1); }
+  }
+  
+  /* Sección Principal */
+  .oculto {
+    display: none;
+  }
+  
+  #principal {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    animation: fadeIn 2s ease forwards;
+  }
+  
+  /* Fondo de Cielo Estrellado */
+  .cielo-estrellado {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #000000, #0a0035);
+    z-index: 1;
+  }
+  
+  /* Estrellas generadas dinámicamente */
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s infinite ease-in-out;
+  }
+  
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 0.2; transform: scale(0.8); }
+  }
+  
+  /* Corazones flotantes */
+  .corazon {
+    position: absolute;
+    display: inline-block;
+    font-size: 15px;
+    color: #ffd54f;
+    opacity: 0;
+    animation: floatingHearts 6s linear infinite;
+    z-index: 2;
+  }
+  
+  @keyframes floatingHearts {
+    0% {
+      opacity: 0;
+      transform: translateY(0) rotate(0deg);
+    }
+    10% {
+      opacity: 0.8;
+    }
+    90% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-100vh) rotate(360deg);
+    }
+  }
+  
+  /* Mensaje Romántico */
+  .mensaje-romantico {
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+    animation: fadeInDown 2s ease;
+  }
+  
+  .mensaje-romantico h2 {
+    font-size: 3rem;
+    color: #ffd600;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+  }
+  
+  .mensaje-romantico .subtitulo {
+    font-size: 1.2rem;
+    color: #fff9c4;
+    opacity: 0;
+    animation: fadeIn 2s ease 1s forwards;
+  }
+  
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Ramo de Flores */
+  .flores-contenedor {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    padding: 20px;
+    z-index: 2;
+  }
+  
+  .flor-grupo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: aparecerFlor 2s ease forwards;
+  }
+  
+  .flor-grupo:nth-child(1) {
+    animation-delay: 1s;
+  }
+  .flor-grupo:nth-child(2) {
+    animation-delay: 1.5s;
+  }
+  .flor-grupo:nth-child(3) {
+    animation-delay: 2s;
+  }
+  .flor-grupo:nth-child(4) {
+    animation-delay: 2.5s;
+  }
+  .flor-grupo:nth-child(5) {
+    animation-delay: 3s;
+  }
+  
+  @keyframes aparecerFlor {
+    from { opacity: 0; transform: translateY(50px) scale(0.8); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  
+  .flor-svg {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.5s ease;
+  }
+  
+  .flor-svg:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  /* Variaciones de tamaño y rotación */
+  .flor-grande {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .flor-pequena {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .flor-inclinada {
+    transform: rotate(-15deg);
+  }
+  
+  .flor-inclinada:hover {
+    transform: scale(1.1) rotate(-10deg);
+  }
+  
+  /* Tallos y hojas */
+  .tallo {
+    width: 5px;
+    height: 100px;
+    background-color: #4CAF50;
+    position: relative;
+    z-index: -1;
+    border-radius: 0 0 2px 2px;
+  }
+  
+  .tallo-largo {
+    height: 120px;
+  }
+  
+  .tallo-medio {
+    height: 110px;
+  }
+  
+  .tallo-corto {
+    height: 80px;
+  }
+  
+  .hoja {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background-color: #66BB6A;
+    border-radius: 50%;
+    z-index: -1;
+  }
+  
+  .hoja-izquierda {
+    transform: rotate(30deg);
+    left: -15px;
+    top: 40%;
+  }
+  
+  .hoja-derecha {
+    transform: rotate(-30deg);
+    right: -15px;
+    top: 60%;
+  }
+  
+  /* Controles de audio */
+  .audio-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+  }
+  
+  .btn-audio {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 214, 0, 0.7);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+  }
+  
+  .btn-audio:hover {
+    background: rgba(255, 214, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  .btn-audio.muted {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Mensaje final */
+  .mensaje-final {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+    opacity: 0;
+    animation: fadeIn 2s ease 4s forwards;
+  }
+  
+  .mensaje-final p {
+    font-size: 1.5rem;
+    color: #ffd600;
+    font-style: italic;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Media queries para responsividad */
+  @media (max-width: 768px) {
+    .contenedor-texto h1 {
+      font-size: 2.2rem;
+    }
+    
+    .mensaje-romantico h2 {
+      font-size: 2rem;
+    }
+    
+    .flores-contenedor {
+      gap: 10px;
+    }
+    
+    .flor-svg {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .flor-grande {
+      width: 90px;
+      height: 90px;
+    }
+    
+    .flor-pequena {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .tallo {
+      height: 80px;
+    }
+    
+    .tallo-largo {
+      height: 90px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contenedor-texto h1 {
+      font-size: 1.8rem;
+    }
+    
+    .mensaje-romantico h2 {
+      font-size: 1.5rem;
+    }
+    
+    .flores-contenedor {
+      flex-wrap: wrap;
+    }
+    
+    .flor-grupo {
+      margin-bottom: 20px;
+    }
+  }
+  

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flores Amarillas - Noche Estrellada</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Pantalla de Presentación -->
+  <div id="presentacion" class="presentacion-activa">
+    <div class="contenedor-texto">
+      <h1>tengo un regalo que te encantara</h1>
+      <button id="btnIniciar">Ver sorpresa</button>
+    </div>
+  </div>
+
+  <!-- Contenido Principal -->
+  <div id="principal" class="oculto">
+    <!-- Fondo de cielo (se completará con estrellas mediante JS) -->
+    <div class="cielo-estrellado"></div>
+    
+    <!-- Corazones flotantes (se añadirán mediante JS) -->
+    <div class="corazones-container"></div>
+    
+    <!-- Mensaje romántico -->
+    <div class="mensaje-romantico">
+      <h2>Estas flores amarillas como el color de tus ojos</h2>
+      <p class="subtitulo">Cada flor representa un momento especial contigo</p>
+    </div>
+    
+    <!-- Ramo de flores dibujado con SVG -->
+    <div class="flores-contenedor">
+      <!-- Flor 1 -->
+      <div class="flor-grupo">
+        <div class="flor-svg">
+          <svg viewBox="0 0 100 100">
+            <!-- Centro de la flor -->
+            <circle cx="50" cy="50" r="10" fill="#FFA000"/>
+            <!-- Petalos -->
+            <g fill="#FFEB3B">
+              <ellipse cx="50" cy="20" rx="8" ry="16"/>
+              <ellipse cx="80" cy="50" rx="8" ry="16" transform="rotate(72 50 50)"/>
+              <ellipse cx="50" cy="80" rx="8" ry="16" transform="rotate(144 50 50)"/>
+              <ellipse cx="20" cy="50" rx="8" ry="16" transform="rotate(216 50 50)"/>
+              <ellipse cx="50" cy="20" rx="8" ry="16" transform="rotate(288 50 50)"/>
+            </g>
+          </svg>
+        </div>
+        <!-- Tallo y hojas -->
+        <div class="tallo">
+          <div class="hoja hoja-izquierda"></div>
+          <div class="hoja hoja-derecha"></div>
+        </div>
+      </div>
+      
+      <!-- Flor 2 -->
+      <div class="flor-grupo">
+        <div class="flor-svg flor-grande">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="12" fill="#FF8F00"/>
+            <g fill="#FFF176">
+              <ellipse cx="50" cy="20" rx="9" ry="18"/>
+              <ellipse cx="80" cy="50" rx="9" ry="18" transform="rotate(72 50 50)"/>
+              <ellipse cx="50" cy="80" rx="9" ry="18" transform="rotate(144 50 50)"/>
+              <ellipse cx="20" cy="50" rx="9" ry="18" transform="rotate(216 50 50)"/>
+              <ellipse cx="50" cy="20" rx="9" ry="18" transform="rotate(288 50 50)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="tallo tallo-largo">
+          <div class="hoja hoja-izquierda"></div>
+          <div class="hoja hoja-derecha"></div>
+        </div>
+      </div>
+      
+      <!-- Flor 3 -->
+      <div class="flor-grupo">
+        <div class="flor-svg flor-pequena">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="8" fill="#FFC107"/>
+            <g fill="#FFEE58">
+              <ellipse cx="50" cy="25" rx="7" ry="14"/>
+              <ellipse cx="75" cy="50" rx="7" ry="14" transform="rotate(72 50 50)"/>
+              <ellipse cx="50" cy="75" rx="7" ry="14" transform="rotate(144 50 50)"/>
+              <ellipse cx="25" cy="50" rx="7" ry="14" transform="rotate(216 50 50)"/>
+              <ellipse cx="50" cy="25" rx="7" ry="14" transform="rotate(288 50 50)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="tallo tallo-corto">
+          <div class="hoja hoja-izquierda"></div>
+          <div class="hoja hoja-derecha"></div>
+        </div>
+      </div>
+      
+      <!-- Flor 4 -->
+      <div class="flor-grupo">
+        <div class="flor-svg flor-inclinada">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="9" fill="#FFB300"/>
+            <g fill="#FFF59D">
+              <ellipse cx="50" cy="22" rx="8" ry="15"/>
+              <ellipse cx="78" cy="50" rx="8" ry="15" transform="rotate(72 50 50)"/>
+              <ellipse cx="50" cy="78" rx="8" ry="15" transform="rotate(144 50 50)"/>
+              <ellipse cx="22" cy="50" rx="8" ry="15" transform="rotate(216 50 50)"/>
+              <ellipse cx="50" cy="22" rx="8" ry="15" transform="rotate(288 50 50)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="tallo">
+          <div class="hoja hoja-izquierda"></div>
+          <div class="hoja hoja-derecha"></div>
+        </div>
+      </div>
+      
+      <!-- Flor 5 -->
+      <div class="flor-grupo">
+        <div class="flor-svg">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="10" fill="#FFB74D"/>
+            <g fill="#FFECB3">
+              <ellipse cx="50" cy="20" rx="8" ry="16"/>
+              <ellipse cx="80" cy="50" rx="8" ry="16" transform="rotate(72 50 50)"/>
+              <ellipse cx="50" cy="80" rx="8" ry="16" transform="rotate(144 50 50)"/>
+              <ellipse cx="20" cy="50" rx="8" ry="16" transform="rotate(216 50 50)"/>
+              <ellipse cx="50" cy="20" rx="8" ry="16" transform="rotate(288 50 50)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="tallo tallo-medio">
+          <div class="hoja hoja-izquierda"></div>
+          <div class="hoja hoja-derecha"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Controles de audio -->
+    <div class="audio-control">
+      <audio id="musica-fondo" loop>
+        <source src="https://assets.codepen.io/4358584/Ozoono-Love_Secret.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+      </audio>
+    </div>
+    
+    <!-- Mensaje final -->
+    <div class="mensaje-final">
+      <p>Conmigo no seras espectadora</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
